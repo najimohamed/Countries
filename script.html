@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countries Information Search</title>   
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <h4>Countries</h4>
+          <h2 class="container" style="text-align: center;">Home Page</h2>        
+    </nav> <br><br>
+
+    <input type="text" id="search-box" placeholder="Enter a country name..."> <br><br>
+   
+    <div class="row card-container">
+        <div class="card form-group col-md-4" data-country="Albania">
+          <img src="Flags/albania flag.jpg" alt="Albania flag">
+          <h3>Albania</h3>
+          <p>Capital: Tirana</p>
+          <p>Population: 2,877,797</p>
+          <p>Language: Albanian</p>
+        </div>
+        <div class="card form-group col-md-4" data-country="Andorra">
+          <img src="Flags/Andorra flag.jpg" alt="Andorra flag">
+          <h3>Andorra</h3>
+          <p>Capital: Andorra la Vella</p>
+          <p>Population: 77,265</p>
+          <p>Language: Catalan</p>
+        </div>
+        <div class="card form-group col-md-4" data-country="Austria">
+          <img src="Flags/Austria flag.jpg" alt="Austria flag">
+          <h3>Austria</h3>
+          <p>Capital: Vienna</p>
+          <p>Population: 8,773,686</p>
+          <p>Language: German</p>
+        </div> 
+
+        <div class="card form-group col-md-4"data-country="Belarus">
+            <img src="Flags/Belarus.jpg" alt="Belarus flag">
+            <h3>Belarus</h3>
+            <p>Capital: Minsk</p>
+            <p>Population: 9,485,386</p>
+            <p>Language: Belarusian, Russian</p>
+          </div>
+          <div class="card form-group col-md-4" data-country="Belgium">
+            <img src="Flags/Belgium flag.jpg" alt="Belgium flag">
+            <h3>Belgium</h3>
+            <p>Capital: Brussels</p>
+            <p>Population: 11,632,186</p>
+            <p>Language: Dutch, French, German</p>
+          </div>
+          <div class="card form-group col-md-4" data-country="Bosnia">
+            <img src="Flags/Bosnia flag.jpg" alt="Bosnia and Herzegovina flag">
+            <h3>Bosnia and Herzegovina</h3>
+            <p>Capital: Sarajevo</p>
+            <p>Population: 3,280,819</p>
+            <p>Language: Bosnian, Croatian, Serbian</p>
+          </div> 
+        
+          <div class="card form-group col-md-4" data-country="Bulgaria">
+            <img src="Flags/Bulgaria flag.jpg" alt="Bulgaria flag">
+            <h3>Bulgaria</h3>
+            <p>Capital: Sofia</p>
+            <p>Population: 6,916,548</p>
+            <p>Language: Bulgarian</p>
+          </div>
+          <div class="card form-group col-md-4" data-country="Croatia">
+            <img src="Flags/Croatia flag.jpg" alt="Croatia flag">
+            <h3>Croatia</h3>
+            <p>Capital: Zagreb</p>
+            <p>Population: 4,060,313</p>
+            <p>Language: Croatian</p>
+           </div>
+           <div class="card form-group col-md-4" data-country="Cyprus">
+            <img src="Flags/Cyprus flag.jpg" alt="Cyprus flag">
+            <h3>Cyprus</h3>
+            <p>Capital: Nicosia</p>
+            <p>Population: 1,207,359</p>
+            <p>Language: Greek, Turkish</p>
+           </div>
+           
+           <div class="card form-group col-md-4" data-country="France">
+            <img src="Flags/France.jpg" alt="France flag">
+            <h3>France</h3>
+            <p>Capital: Paris</p>
+            <p>Population: 67,413,000</p>
+            <p>Language: French</p>
+          </div>       
+          <div class="card form-group col-md-4" data-country="Germany">
+            <img src="Flags/Germany flag.jpg" alt="Germany flag">
+            <h3>Germany</h3>
+            <p>Capital: Berlin</p>
+            <p>Population: 83,190,556</p>
+            <p>Language: German</p>
+          </div>      
+          <div class="card form-group col-md-4" data-country="Italy">
+            <img src="Flags/Italy flag.jpg" alt="Italy flag">
+            <h3>Italy</h3>
+            <p>Capital: Rome</p>
+            <p>Population: 60,461,826</p>
+            <p>Language: Italian</p>
+          </div>
+          
+        
+          <div class="card form-group col-md-4" data-country="United_Kingdom">
+            <img src="Flags/United_Kingdom flag.jpg" alt="United Kingdom flag">
+            <h3>United Kingdom</h3>
+            <p>Capital: London</p>
+            <p>Population: 68,207,116</p>
+            <p>Language: English</p>
+          </div>
+          <div class="card form-group col-md-4" data-country="Sweden">
+            <img src="Flags/sweden flag.jpg" alt="Sweden flag">
+            <h3>Sweden</h3>
+            <p>Capital: Stockholm</p>
+            <p>Population: 10,395,993</p>
+            <p>Language: Swedish</p>
+          </div>
+          <div class="card form-group col-md-4" data-country="Spanish">
+            <img src="Flags/Spain flag.jpg" alt="Spain flag">
+            <h3>Spain</h3>
+            <p>Capital: Madrid</p>
+            <p>Population: 47,394,223</p>
+            <p>Language: Spanish</p>
+          </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card'); // Get all the cards
+      
+        // Add an event listener to the search box that listens for input events
+        document.querySelector('#search-box').addEventListener('input', function(event) {
+          const searchQuery = event.target.value.toLowerCase(); // Get the search query and convert to lowercase
+      
+          // Loop through all the cards
+          cards.forEach(card => {
+            const country = card.dataset.country.toLowerCase(); // Get the country name from the data-country attribute and convert to lowercase
+      
+            // If the search query matches the country name, display the card. Otherwise, hide the card.
+            if (country.includes(searchQuery)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      </script>
+    </body>
+
+          
+
+   
+    
+      
+
+          
+          
+         
+          
+          
+             
