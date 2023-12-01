@@ -24,4 +24,19 @@ function search() {
     }
   }
   
+ 
+  function filterByContinent() {
+    var selectedContinent = document.getElementById("continent-select").value.toLowerCase();
+    var cards = document.querySelectorAll(".card");
+
+    cards.forEach(function (card) {
+      var cardContinent = card.getAttribute("data-continent").toLowerCase();
+
+      if (selectedContinent === "all" || cardContinent === selectedContinent) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
   

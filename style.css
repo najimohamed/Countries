@@ -1,25 +1,33 @@
 .card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   padding: 20px;
-  border-radius: 10px;   
-  width: 60px;
-  height: 300px;
+  border-radius: 10px;    
+  height: 350px;
   font-family: Arial, sans-serif;
+  width: 500px;
   text-align: center;
+  align-items: center;
+  margin-top: 40px; 
+}
+
+div.card.form-group {
+  background-color: beige;}
+
+.card-container {
+  gap: 20px; 
+  justify-content: center; 
 }
 
 .card img {
-  width: 4cm;
-  height: 3cm;
+  object-fit: contain;
+  width: 6cm;
+  height: 4cm;
   object-fit: cover;
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; 
 }
 
-.card h2 {
+.card h3 {
   margin-top: 20px;
   font-size: 20px;
   color: #333333;
@@ -33,10 +41,27 @@
 }
 
 #search-box {
-  margin-left: 1200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  float: right;
+  
 }
-#search-search{float:right;
-  }
+#search-search {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; 
+  color: #fff; 
+  cursor: pointer;
+  float: right;
+  margin-left: 15px;
+}
+
+#search-search:hover {
+  background-color: #0056b3; /* Adjust the hover background color as needed */
+}
+
 
 
 
